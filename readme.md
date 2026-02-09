@@ -24,3 +24,8 @@ N: NodeJs(Backend)
   GET         /workout/:id --> Get a single workout doc
   DELETE      /workout/:id --> Deletes a single workout docs 
   PATCH       /workout/:id --> Updates a single workout
+
+
+
+  Frontend
+  npx create-react-app frontend
