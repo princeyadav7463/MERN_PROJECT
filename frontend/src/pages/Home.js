@@ -17,13 +17,11 @@ function Home() {
     fetchWorkouts();
   }, []);
 
-  // Add or update workout
   const handleSubmit = async (e) => {
     e.preventDefault();
     const workoutData = { title, load, reps };
 
     if (editingId) {
-      // PATCH request
       const res = await fetch(
         `http://localhost:4000/api/workouts/${editingId}`,
         {
@@ -38,7 +36,6 @@ function Home() {
       );
       setEditingId(null);
     } else {
-      // POST request
       const res = await fetch("http://localhost:4000/api/workouts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -53,7 +50,6 @@ function Home() {
     setReps("");
   };
 
-  // DELETE workout
   const handleDelete = async (id) => {
     await fetch(`http://localhost:4000/api/workouts/${id}`, {
       method: "DELETE",
@@ -61,7 +57,6 @@ function Home() {
     setWorkouts(workouts.filter((w) => w._id !== id));
   };
 
-  // EDIT workout
   const handleEdit = (workout) => {
     setTitle(workout.title);
     setLoad(workout.load);
@@ -106,7 +101,7 @@ function Home() {
             <span>
               {w.title} - {w.load}kg x {w.reps} reps
             </span>
-            <div className="buttons">
+            <div className="button">
               <button type="button" onClick={() => handleEdit(w)}>
                 Edit
               </button>

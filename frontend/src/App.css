@@ -27,7 +27,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #1d3557;
+  background-color: #25ce2a;
 }
 
 ul {
@@ -47,8 +47,8 @@ li {
 }
 
 li button.delete {
-  background-color: #e63946;
-  color: white;
+  background-color: #ce1827;
+  color: rgb(169, 166, 166);
   border: none;
   padding: 5px 8px;
   border-radius: 4px;
