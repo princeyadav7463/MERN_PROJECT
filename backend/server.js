@@ -31,8 +31,6 @@ app.get("/", (req, res) => {
   res.json({ msg: "Welcome to our application" });
 });
 
-app.use("/api/workouts/", workoutRoutes);
-
 
 // connect to db
 mongoose.connect(process.env.MONGO_URI)
